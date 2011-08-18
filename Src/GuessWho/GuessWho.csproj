@@ -59,10 +59,17 @@
     <Compile Include="CensusDataFile.cs" />
     <Compile Include="CensusNameData.cs" />
     <Compile Include="CensusNameDataFileSerializer.cs" />
+    <Compile Include="DefaultNameFileTypeConvention.cs" />
     <Compile Include="EmbededCensusDataFileProvider.cs" />
+    <Compile Include="Gender.cs" />
+    <Compile Include="GeneratedName.cs" />
     <Compile Include="ICensusDataFileProvider.cs" />
+    <Compile Include="INameFileTypeConvention.cs" />
     <Compile Include="NameFileParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NameGenerator.cs" />
+    <Compile Include="RandomNameConfiguration.cs" />
+    <Compile Include="RandomNameExtensions.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
