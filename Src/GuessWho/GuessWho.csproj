@@ -40,8 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CensusDataFile.cs" />
     <Compile Include="CensusNameData.cs" />
     <Compile Include="CensusNameDataFileSerializer.cs" />
+    <Compile Include="EmbededCensusDataFileProvider.cs" />
+    <Compile Include="ICensusDataFileProvider.cs" />
     <Compile Include="NameFileParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

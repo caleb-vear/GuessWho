@@ -59,10 +59,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CensusNameDataFileSerializerBehaviour.cs" />
+    <Compile Include="EmbeddedCensusDataFileProviderBehaviour.cs" />
     <Compile Include="NameParserBehaviour.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\GuessWho\NameDataFiles\dist.top1000.female.first.cnd">
+      <Link>TestNameFiles\dist.top1000.female.first.cnd</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\GuessWho\NameDataFiles\dist.top1000.male.first.cnd">
+      <Link>TestNameFiles\dist.top1000.male.first.cnd</Link>
+    </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
