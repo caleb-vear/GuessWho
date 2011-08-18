@@ -45,6 +45,15 @@
     <Compile Include="NameFileParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="NameDataFiles\dist.all.female.first.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.all.last.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.all.male.first.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.top1000.female.first.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.top1000.last.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.top1000.male.first.cnd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
