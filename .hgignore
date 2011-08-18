@@ -4,6 +4,7 @@ syntax: glob
 *.suo
 *\bin\*
 *\obj\*
+_ReSharper*
 *\_ReSharper*
 *.ReSharper.user
 glob:Source/Shell/publish/

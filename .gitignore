@@ -8,7 +8,4 @@ Debug
 *.ps
 *VisualState.xml
 *csproj.user
-.gitignore
-/Release*/
-BlueWren/Test
-*.log
+*_ReSharper*
