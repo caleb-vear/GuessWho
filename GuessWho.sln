@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessWho.Sample", "src\Gues
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessWho.Tests", "src\GuessWho.Tests\GuessWho.Tests.csproj", "{D7D587D9-DAD4-4E5A-BB3F-45EE9B6F5C73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessWho.NameFileConverter", "src\GuessWho.NameFileConverter\GuessWho.NameFileConverter.csproj", "{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{D7D587D9-DAD4-4E5A-BB3F-45EE9B6F5C73}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D7D587D9-DAD4-4E5A-BB3F-45EE9B6F5C73}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D7D587D9-DAD4-4E5A-BB3F-45EE9B6F5C73}.Release|x86.ActiveCfg = Release|Any CPU
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Debug|x86.ActiveCfg = Debug|x86
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Debug|x86.Build.0 = Debug|x86
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Release|Any CPU.ActiveCfg = Release|x86
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Release|x86.ActiveCfg = Release|x86
+		{9A323F50-CF8C-4072-9EB4-C8BF9A232D1B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

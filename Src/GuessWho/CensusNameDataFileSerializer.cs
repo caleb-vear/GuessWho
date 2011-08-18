@@ -7,7 +7,7 @@ namespace GuessWho
     public class CensusNameDataFileSerializer
     {
 
-        public void Serialize(MemoryStream stream, IEnumerable<CensusNameData> nameData)
+        public void Serialize(Stream stream, IEnumerable<CensusNameData> nameData)
         {
             var writer = new BinaryWriter(stream);
 
@@ -20,7 +20,7 @@ namespace GuessWho
             }
         }
 
-        public IEnumerable<CensusNameData> Deserialize(MemoryStream stream)
+        public IEnumerable<CensusNameData> Deserialize(Stream stream)
         {
             var reader = new BinaryReader(stream);
 
