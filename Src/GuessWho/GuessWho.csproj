@@ -30,6 +30,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release Top1000|AnyCPU'">
+    <OutputPath>bin\Release Top1000\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\GuessWho.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,12 +66,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="NameDataFiles\dist.all.female.first.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.all.last.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.all.male.first.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.top1000.female.first.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.top1000.last.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.top1000.male.first.cnd" />
+    <EmbeddedResource Condition=" '$(Configuration)' != 'Release Top1000' " Include="NameDataFiles\dist.all.female.first.cnd" />
+    <EmbeddedResource Condition=" '$(Configuration)' != 'Release Top1000' " Include="NameDataFiles\dist.all.last.cnd" />
+    <EmbeddedResource Condition=" '$(Configuration)' != 'Release Top1000' " Include="NameDataFiles\dist.all.male.first.cnd" />
+    <EmbeddedResource Condition=" '$(Configuration)' == 'Release Top1000' " Include="NameDataFiles\dist.top1000.female.first.cnd" />
+    <EmbeddedResource Condition=" '$(Configuration)' == 'Release Top1000' " Include="NameDataFiles\dist.top1000.last.cnd" />
+    <EmbeddedResource Condition=" '$(Configuration)' == 'Release Top1000' " Include="NameDataFiles\dist.top1000.male.first.cnd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
