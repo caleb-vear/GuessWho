@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace GuessWho
@@ -18,9 +17,9 @@ namespace GuessWho
         public NameGenerator(RandomNameConfiguration configuration)
         {
             _random = configuration.CreateRandom();
-            _maleTable = new RandomTable<string>(_random);
-            _femaleTable = new RandomTable<string>(_random);
-            _surnameTable = new RandomTable<string>(_random);
+            _maleTable = new RandomTable<string>(_random.Next);
+            _femaleTable = new RandomTable<string>(_random.Next);
+            _surnameTable = new RandomTable<string>(_random.Next);
 
             _maxGivenNames = configuration.MaxGivenNames;
 
@@ -61,43 +60,6 @@ namespace GuessWho
                 .Concat(_surnameTable.Sequence.Take(1));
 
             return new GeneratedName(names.ToArray(), Gender.Female);
-        }
-
-        private class RandomTable<T>
-        {
-            readonly Random _random;
-            readonly IList<KeyValuePair<int, T>> _valuePairs = new List<KeyValuePair<int, T>>();
-            int _totalCumulativeFrequency = 0;
-
-            public RandomTable(Random random)
-            {
-                _random = random;
-            } 
-
-            public void Add(T item, int frequency)
-            {
-                _totalCumulativeFrequency += frequency;
-                _valuePairs.Add(new KeyValuePair<int, T>(_totalCumulativeFrequency, item));                
-            }
-
-            T Next()
-            {
-                var index = _random.Next(0, _totalCumulativeFrequency);
-
-                return _valuePairs
-                    .SkipWhile(vp => vp.Key < index)
-                    .Select(vp => vp.Value)
-                    .FirstOrDefault();                
-            }
-
-            public IEnumerable<T> Sequence
-            {
-                get
-                {
-                    while (true)
-                        yield return Next(); 
-                }
-            }
-        }
+        }        
     }
 }

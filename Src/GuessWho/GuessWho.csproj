@@ -70,6 +70,7 @@
     <Compile Include="NameGenerator.cs" />
     <Compile Include="RandomNameConfiguration.cs" />
     <Compile Include="RandomNameExtensions.cs" />
+    <Compile Include="RandomTable.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
