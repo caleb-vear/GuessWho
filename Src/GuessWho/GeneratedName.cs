@@ -7,6 +7,8 @@ namespace GuessWho
     {
         readonly IEnumerable<string> _names;
 
+        public IEnumerable<string> AllNames { get { return _names; } }
+
         public IEnumerable<string> GivenNames
         {
             get { return _names.Take(_names.Count() - 1); }
@@ -31,8 +33,13 @@ namespace GuessWho
 
         public GeneratedName(IEnumerable<string> names, Gender gender)
         {
-            _names = names;            
+            _names = names.Select(Capitalize);
             Gender = gender;
+        }
+
+        string Capitalize(string name)
+        {
+            return name.Substring(0, 1).ToUpper() + name.Substring(1).ToLower();
         }
 
         public override string ToString()

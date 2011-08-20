@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="CensusNameDataFileSerializerBehaviour.cs" />
     <Compile Include="EmbeddedCensusDataFileProviderBehaviour.cs" />
+    <Compile Include="GeneratedNameBehaviour.cs" />
     <Compile Include="NameParserBehaviour.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomTableBehaviour.cs" />
