@@ -9,20 +9,22 @@ namespace GuessWho.Sample
         {
             var randomName = new NameGenerator();
 
-            Console.WriteLine("First 10 male names");
-            foreach (var name in randomName.MaleNames().Take(10))
+            const int takeCount = 5;
+
+            Console.WriteLine("First {0} male names", takeCount);
+            foreach (var name in randomName.MaleNames().Take(takeCount))
                 Console.WriteLine(name);
 
             Console.WriteLine();
 
-            Console.WriteLine("First 10 female names");
-            foreach (var name in randomName.FemaleNames().Take(10))
+            Console.WriteLine("First {0} female names", takeCount);
+            foreach (var name in randomName.FemaleNames().Take(takeCount))
                 Console.WriteLine(name);
 
             Console.WriteLine();
 
-            Console.WriteLine("First 10 all names");
-            foreach (var name in randomName.Names().Take(10))
+            Console.WriteLine("First {0} all names", takeCount);
+            foreach (var name in randomName.Names().Take(takeCount))
                 Console.WriteLine(name);
 
             Console.ReadLine();
