@@ -5,9 +5,10 @@ Guess who is a library for generating realistic sample identity information.  Ve
 Contributors who would like to assist in adding other types of identity information are welcome.
 
 Some ideas for future versions
-# Realistic addresses, configurable to different countries
-# Realistic phone numbers
-# Other personal details such as date of birth
+
+1. Realistic addresses, configurable to different countries
+2. Realistic phone numbers
+3. Other personal details such as date of birth
 
 Where are the names from?
 -------------------------
@@ -25,46 +26,46 @@ How do I use it?
 First of all create a new instance of NameGenerator class.
 
 ```c#
-var randomName = new NameGenerator();
+	var randomName = new NameGenerator();
 ```
 
 You can then get new names by using any of the following methods.
 
 ```c#
-var boysName = randomName.NextMaleName();
-var girlsName = randomName.NextFemaleName();
-var whoKnowsName = randomName.NextName();
+	var boysName = randomName.NextMaleName();
+	var girlsName = randomName.NextFemaleName();
+	var whoKnowsName = randomName.NextName();
 ```
 
 If you use the _NextName()_ method you can find out what gender the name is using the _Gender_ property.
 
 ```c#
-if (whoKnowsName.Gender == Gender.Male)
-	Console.WriteLine("It's a boy!");
-else
-	Console.WriteLine("It's a girl!");
+	if (whoKnowsName.Gender == Gender.Male)
+		Console.WriteLine("It's a boy!");
+	else
+		Console.WriteLine("It's a girl!");
 ```
 
 For convenience there are also extension methods which allow you to _IEnumerable<GeneratedName>'s_ of names.
 
 ```c#
-const int takeCount = 2;
+	const int takeCount = 2;
 
-Console.WriteLine("First {0} male names", takeCount);
-foreach (var name in randomName.MaleNames().Take(takeCount))
-	Console.WriteLine(name);
+	Console.WriteLine("First {0} male names", takeCount);
+	foreach (var name in randomName.MaleNames().Take(takeCount))
+		Console.WriteLine(name);
 
-Console.WriteLine();
+	Console.WriteLine();
 
-Console.WriteLine("First {0} female names", takeCount);
-foreach (var name in randomName.FemaleNames().Take(takeCount))
-	Console.WriteLine(name);
+	Console.WriteLine("First {0} female names", takeCount);
+	foreach (var name in randomName.FemaleNames().Take(takeCount))
+		Console.WriteLine(name);
 
-Console.WriteLine();
+	Console.WriteLine();
 
-Console.WriteLine("First {0} all names", takeCount);
-foreach (var name in randomName.Names().Take(takeCount))
-	Console.WriteLine(name);
+	Console.WriteLine("First {0} all names", takeCount);
+	foreach (var name in randomName.Names().Take(takeCount))
+		Console.WriteLine(name);
 ```
 
 Sample output
@@ -88,11 +89,11 @@ Advanced configuration
 If you would like a little bit more control over how names are generated you can use the RandomNameConfiguration class.
 
 ```c#
-var configuration = new RandomNameConfiguration()
-	.Seed(1337) // Specify a custom seed so you can generate repeatable results
-	.MaximumGivenNames(10) // Hey some people have more names than others the default is 3
-	.CensusDataFileProvider(new CustomCensusDataFileProvider()) // Determine how the name files are loaded
-	.NameFileTypeConvention(new CustomConvention()); // Control which files are treated as male or female
+	var configuration = new RandomNameConfiguration()
+		.Seed(1337) // Specify a custom seed so you can generate repeatable results
+		.MaximumGivenNames(10) // Hey some people have more names than others the default is 3
+		.CensusDataFileProvider(new CustomCensusDataFileProvider()) // Determine how the name files are loaded
+		.NameFileTypeConvention(new CustomConvention()); // Control which files are treated as male or female
 
-var randomName = new NameGenerator(configuration);
+	var randomName = new NameGenerator(configuration);
 ```
