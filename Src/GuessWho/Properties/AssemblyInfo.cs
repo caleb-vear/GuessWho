@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("GuessWho")]
-[assembly: AssemblyDescription("A library for generating realistic sample identity information data")]
+[assembly: AssemblyDescription("GuessWho is a library for generating realistic sample identity information.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Caleb Vear")]
 [assembly: AssemblyProduct("GuessWho")]
