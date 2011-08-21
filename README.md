@@ -20,6 +20,16 @@ The frequency data of the names to produce the names is used to produce more of 
 These name files come embedded in the assembly, but if you would like to you can implemented your own
 custom _ICensusDataFileProvider_ to load them from some other location.
 
+How can I get it?
+-----------------
+
+GuessWho is available on nuget.  Two version have been published 
+[GuessWho](http://nuget.org/List/Packages/GuessWho) and 
+[GuessWho.Top1000](http://nuget.org/List/Packages/GuessWho.Top1000).
+
+GuessWho.Top1000 is a cut down version that only includes 1,000 of each type of name.
+This saves quite a lot of space as the full version assembly ways in at 919KB compared to 45KB for the cut down version.
+
 How do I use it?
 ----------------
 
