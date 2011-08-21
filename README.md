@@ -6,9 +6,9 @@ Contributors who would like to assist in adding other types of identity informat
 
 Some ideas for future versions
 
-1. Realistic addresses, configurable to different countries
-2. Realistic phone numbers
-3. Other personal details such as date of birth
+* Realistic addresses, configurable to different countries
+* Realistic phone numbers
+* Other personal details such as date of birth
 
 Where are the names from?
 -------------------------
@@ -26,29 +26,36 @@ How do I use it?
 First of all create a new instance of NameGenerator class.
 
 ```c#
+
 	var randomName = new NameGenerator();
+	
 ```
 
 You can then get new names by using any of the following methods.
 
 ```c#
+
 	var boysName = randomName.NextMaleName();
 	var girlsName = randomName.NextFemaleName();
 	var whoKnowsName = randomName.NextName();
+	
 ```
 
 If you use the _NextName()_ method you can find out what gender the name is using the _Gender_ property.
 
 ```c#
+
 	if (whoKnowsName.Gender == Gender.Male)
 		Console.WriteLine("It's a boy!");
 	else
 		Console.WriteLine("It's a girl!");
+		
 ```
 
 For convenience there are also extension methods which allow you to _IEnumerable<GeneratedName>'s_ of names.
 
 ```c#
+
 	const int takeCount = 2;
 
 	Console.WriteLine("First {0} male names", takeCount);
@@ -66,21 +73,22 @@ For convenience there are also extension methods which allow you to _IEnumerable
 	Console.WriteLine("First {0} all names", takeCount);
 	foreach (var name in randomName.Names().Take(takeCount))
 		Console.WriteLine(name);
+		
 ```
 
 Sample output
 -------------
 
-> First 2 male names
->     Steve Ashcraft
+> First 2 male names  
+>     Steve Ashcraft  
 >     Christopher Timothy Bischoff
 >
-> First 2 female names
->     Denise Jan Dellinger
+> First 2 female names  
+>     Denise Jan Dellinger  
 >     Brigida Carpenter
 >
-> First 2 all names
->     Ivan Brent Duffey
+> First 2 all names  
+>     Ivan Brent Duffey  
 >     Christy Mildred Clark
 
 Advanced configuration
@@ -89,6 +97,7 @@ Advanced configuration
 If you would like a little bit more control over how names are generated you can use the RandomNameConfiguration class.
 
 ```c#
+	
 	var configuration = new RandomNameConfiguration()
 		.Seed(1337) // Specify a custom seed so you can generate repeatable results
 		.MaximumGivenNames(10) // Hey some people have more names than others the default is 3
@@ -96,4 +105,5 @@ If you would like a little bit more control over how names are generated you can
 		.NameFileTypeConvention(new CustomConvention()); // Control which files are treated as male or female
 
 	var randomName = new NameGenerator(configuration);
+	
 ```
