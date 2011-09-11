@@ -28,7 +28,7 @@ GuessWho is available on nuget.  Two version have been published
 [GuessWho.Top1000](http://nuget.org/List/Packages/GuessWho.Top1000).
 
 GuessWho.Top1000 is a cut down version that only includes 1,000 of each type of name.
-This saves quite a lot of space as the full version assembly ways in at 919KB compared to 45KB for the cut down version.
+This saves quite a lot of space as the full version assembly weighs in at 919KB compared to 45KB for the cut down version.
 
 If you're a [Mercurial](http://mercurial.selenic.com/) users you might like head over to the project's 
 [bitbucket repository](https://bitbucket.org/calebvear/guesswho) if you're already at the bitbucket repository, but looking
