@@ -19,5 +19,10 @@ namespace GuessWho
         {
             return (Name ?? string.Empty) + " | " + Frequency;
         }
+
+        public override int GetHashCode()
+        {
+            return 29 * Name.GetHashCode() ^ Frequency.GetHashCode();
+        }
     }
 }

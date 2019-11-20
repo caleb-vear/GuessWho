@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using GuessWho;
 
-namespace GuessWho.NameFileConverter
+namespace NameFileConverter
 {
     class Program
     {

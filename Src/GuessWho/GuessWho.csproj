@@ -1,92 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B20211F-5BB6-4450-BAE6-8AEC3D711219}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GuessWho</RootNamespace>
-    <AssemblyName>GuessWho</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release Top1000|AnyCPU'">
-    <OutputPath>bin\Release Top1000\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisLogFile>bin\Release\GuessWho.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
-    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
-    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
-    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
-    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <None Remove="NameDataFiles\dist.all.female.first.cnd" />
+    <None Remove="NameDataFiles\dist.all.last.cnd" />
+    <None Remove="NameDataFiles\dist.all.male.first.cnd" />
+    <None Remove="NameDataFiles\dist.top1000.female.first.cnd" />
+    <None Remove="NameDataFiles\dist.top1000.last.cnd" />
+    <None Remove="NameDataFiles\dist.top1000.male.first.cnd" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="CensusDataFile.cs" />
-    <Compile Include="CensusNameData.cs" />
-    <Compile Include="CensusNameDataFileSerializer.cs" />
-    <Compile Include="DefaultNameFileTypeConvention.cs" />
-    <Compile Include="EmbededCensusDataFileProvider.cs" />
-    <Compile Include="Gender.cs" />
-    <Compile Include="GeneratedName.cs" />
-    <Compile Include="ICensusDataFileProvider.cs" />
-    <Compile Include="INameFileTypeConvention.cs" />
-    <Compile Include="NameFileParser.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NameGenerator.cs" />
-    <Compile Include="RandomNameConfiguration.cs" />
-    <Compile Include="RandomNameExtensions.cs" />
-    <Compile Include="RandomTable.cs" />
+    <EmbeddedResource Include="NameDataFiles\dist.all.female.first.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.all.last.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.all.male.first.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.top1000.female.first.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.top1000.last.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.top1000.male.first.cnd" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Condition=" '$(Configuration)' != 'Release Top1000' " Include="NameDataFiles\dist.all.female.first.cnd" />
-    <EmbeddedResource Condition=" '$(Configuration)' != 'Release Top1000' " Include="NameDataFiles\dist.all.last.cnd" />
-    <EmbeddedResource Condition=" '$(Configuration)' != 'Release Top1000' " Include="NameDataFiles\dist.all.male.first.cnd" />
-    <EmbeddedResource Condition=" '$(Configuration)' == 'Release Top1000' " Include="NameDataFiles\dist.top1000.female.first.cnd" />
-    <EmbeddedResource Condition=" '$(Configuration)' == 'Release Top1000' " Include="NameDataFiles\dist.top1000.last.cnd" />
-    <EmbeddedResource Condition=" '$(Configuration)' == 'Release Top1000' " Include="NameDataFiles\dist.top1000.male.first.cnd" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

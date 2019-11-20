@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
+using GuessWho;
 
-namespace GuessWho.Sample
+namespace Sample
 {
     class Program
     {

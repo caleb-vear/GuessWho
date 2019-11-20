@@ -9,3 +9,5 @@ Debug
 *VisualState.xml
 *csproj.user
 *_ReSharper*
+/.vs
+packages
