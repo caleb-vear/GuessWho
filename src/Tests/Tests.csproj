@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\GuessWho\NameDataFiles\dist.top1000.female.first.cnd" Link="TestNameFiles\dist.top1000.female.first.cnd" />
-    <None Include="..\GuessWho\NameDataFiles\dist.top1000.male.first.cnd" Link="TestNameFiles\dist.top1000.male.first.cnd" />
+    <EmbeddedResource Include="..\GuessWho\NameDataFiles\dist.top1000.female.first.cnd" Link="TestNameFiles\dist.top1000.female.first.cnd" />
+    <EmbeddedResource Include="..\GuessWho\NameDataFiles\dist.top1000.male.first.cnd" Link="TestNameFiles\dist.top1000.male.first.cnd" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -14,12 +14,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="NameDataFiles\dist.all.female.first.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.all.last.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.all.male.first.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.top1000.female.first.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.top1000.last.cnd" />
-    <EmbeddedResource Include="NameDataFiles\dist.top1000.male.first.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'" 
+                      Include="NameDataFiles\dist.all.female.first.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'"
+                      Include="NameDataFiles\dist.all.last.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'"
+                      Include="NameDataFiles\dist.all.male.first.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'"
+                      Include="NameDataFiles\dist.top1000.female.first.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'"
+                      Include="NameDataFiles\dist.top1000.last.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'"
+                      Include="NameDataFiles\dist.top1000.male.first.cnd" />
   </ItemGroup>
 
 </Project>

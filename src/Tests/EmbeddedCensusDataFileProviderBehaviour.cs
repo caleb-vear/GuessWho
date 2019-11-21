@@ -8,7 +8,7 @@ namespace GuessWho.Tests
     public class EmbeddedCensusDataFileProviderBehaviour
     {
         [Test]
-        public void ShouldFindEmbededFiles()
+        public void ShouldFindEmbeddedFiles()
         {
             var subject = new EmbededCensusDataFileProvider(GetType().Assembly);
 
