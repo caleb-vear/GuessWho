@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>GuessWho is a library for generating realistic sample identity information.</Description>
+    <Company>Caleb Vear</Company>
+    <Authors>Caleb Vear</Authors>
+    <RepositoryUrl>https://github.com/caleb-vear/GuessWho</RepositoryUrl>
+    <PackageTags>sample-data names identity-info</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,18 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'" 
-                      Include="NameDataFiles\dist.all.female.first.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'"
-                      Include="NameDataFiles\dist.all.last.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'"
-                      Include="NameDataFiles\dist.all.male.first.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'"
-                      Include="NameDataFiles\dist.top1000.female.first.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'"
-                      Include="NameDataFiles\dist.top1000.last.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'"
-                      Include="NameDataFiles\dist.top1000.male.first.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'" Include="NameDataFiles\dist.all.female.first.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'" Include="NameDataFiles\dist.all.last.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'" Include="NameDataFiles\dist.all.male.first.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'" Include="NameDataFiles\dist.top1000.female.first.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'" Include="NameDataFiles\dist.top1000.last.cnd" />
+    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'" Include="NameDataFiles\dist.top1000.male.first.cnd" />
   </ItemGroup>
 
 </Project>
