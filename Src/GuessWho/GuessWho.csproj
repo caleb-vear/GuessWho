@@ -7,24 +7,32 @@
     <Authors>Caleb Vear</Authors>
     <RepositoryUrl>https://github.com/caleb-vear/GuessWho</RepositoryUrl>
     <PackageTags>sample-data names identity-info</PackageTags>
+    <Version>1.1.0</Version>
+    <PackageReleaseNotes># v1.1.0.0
+- Add support for dotnetstandard2.0
+
+# v1.0.0.0
+- Initial release</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageId Condition="'$(Configuration)' != 'ReleaseTop1000'">GuessWho</PackageId>
+    <PackageId Condition="'$(Configuration)' == 'ReleaseTop1000'">GuessWho.Top1000</PackageId>
+    <Configurations>Debug;Release;ReleaseTop1000</Configurations>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="NameDataFiles\dist.all.female.first.cnd" />
-    <None Remove="NameDataFiles\dist.all.last.cnd" />
-    <None Remove="NameDataFiles\dist.all.male.first.cnd" />
-    <None Remove="NameDataFiles\dist.top1000.female.first.cnd" />
-    <None Remove="NameDataFiles\dist.top1000.last.cnd" />
-    <None Remove="NameDataFiles\dist.top1000.male.first.cnd" />
+  <ItemGroup Condition="$(Configuration) != ReleaseTop1000">
+    <EmbeddedResource Include="NameDataFiles\dist.all.female.first.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.all.last.cnd" />
+    <EmbeddedResource Include="NameDataFiles\dist.all.male.first.cnd" />
+  </ItemGroup>
+  <ItemGroup Condition="$(Configuration) == ReleaseTop1000">
+    <EmbeddedResource  Include="NameDataFiles\dist.top1000.female.first.cnd" />
+    <EmbeddedResource  Include="NameDataFiles\dist.top1000.last.cnd" />
+    <EmbeddedResource  Include="NameDataFiles\dist.top1000.male.first.cnd" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'" Include="NameDataFiles\dist.all.female.first.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'" Include="NameDataFiles\dist.all.last.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' != 'Release Top1000'" Include="NameDataFiles\dist.all.male.first.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'" Include="NameDataFiles\dist.top1000.female.first.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'" Include="NameDataFiles\dist.top1000.last.cnd" />
-    <EmbeddedResource Condition="'$(Configuration)' == 'Release Top1000'" Include="NameDataFiles\dist.top1000.male.first.cnd" />
-  </ItemGroup>
+  <Target Name="WhatIsConfiguration" BeforeTargets="Build">
+    <Message Text="$(Configuration)" Importance="high" />
+  </Target>
 
 </Project>
